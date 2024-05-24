@@ -57,26 +57,6 @@ struct ButtonToggleStyle: ButtonStyle {
     }
 }
 
-struct MyToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        Button {
-            configuration.isOn.toggle()
-        } label: {
-            HStack {
-                configuration.label
-            }
-        }
-        .foregroundColor(Color.primaryColor1)
-        .padding(5)
-        .background {
-            if configuration.isOn {
-                Color.highlightColor1
-            }
-        }
-        .cornerRadius(8)
-    }
-}
-
 extension Text {
     func onboardingTextStyle() -> some View {
         self

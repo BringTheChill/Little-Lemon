@@ -5,17 +5,16 @@ struct Menu: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @State var startersIsEnabled = true
-    @State var mainsIsEnabled = true
-    @State var dessertsIsEnabled = true
-    @State var drinksIsEnabled = true
-    
-    @State var searchText = ""
-    
-    @State var loaded = false
-    
-    @State var isKeyboardVisible = false
-    
+    @State private var selectedCategory: String = ""
+
+    @State private var searchText = ""
+
+    @State private var loaded = false
+
+    @State private var isKeyboardVisible = false
+
+    private var categories: [String] = ["Starters","Mains","Desserts","Drinks"]
+
     init() {
         UITextField.appearance().clearButtonMode = .whileEditing
     }
@@ -44,12 +43,23 @@ struct Menu: View {
                     .padding(.leading)
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
-                        Toggle("Starters", isOn: $startersIsEnabled)
-                        Toggle("Mains", isOn: $mainsIsEnabled)
-                        Toggle("Desserts", isOn: $dessertsIsEnabled)
-                        Toggle("Drinks", isOn: $drinksIsEnabled)
+                        ForEach(categories, id: \.self) {category in
+                            Text(category)
+                                .font(.callout)
+                                .frame(minWidth: 35)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 10)
+                                .themeColors(isSelected: category == selectedCategory)
+                                .cornerRadius(20)
+                                .onTapGesture {
+                                    if category == selectedCategory {
+                                        selectedCategory = ""
+                                    } else {
+                                        selectedCategory = category
+                                    }
+                                }
+                        }
                     }
-                    .toggleStyle(MyToggleStyle())
                     .padding(.horizontal)
                 }
                 FetchedObjects(predicate: buildPredicate(),
@@ -91,19 +101,23 @@ struct Menu: View {
     }
     
     func buildPredicate() -> NSCompoundPredicate {
-        let search = searchText == "" ? NSPredicate(value: true) : NSPredicate(format: "title CONTAINS[cd] %@", searchText)
-        let starters = !startersIsEnabled ? NSPredicate(format: "category != %@", "starters") : NSPredicate(value: true)
-        let mains = !mainsIsEnabled ? NSPredicate(format: "category != %@", "mains") : NSPredicate(value: true)
-        let desserts = !dessertsIsEnabled ? NSPredicate(format: "category != %@", "desserts") : NSPredicate(value: true)
-        let drinks = !drinksIsEnabled ? NSPredicate(format: "category != %@", "drinks") : NSPredicate(value: true)
+        let predicate1 = (searchText.isEmpty ? NSPredicate(format: "TRUEPREDICATE") : NSPredicate(format: "title CONTAINS[cd] %@", searchText))
+        let predicate2 = (selectedCategory.isEmpty ? NSPredicate(format: "TRUEPREDICATE") : NSPredicate(format: "category CONTAINS[cd] %@", selectedCategory))
 
-        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [search, starters, mains, desserts, drinks])
-        return compoundPredicate
+        return NSCompoundPredicate(type: .and,
+                                   subpredicates: [ predicate1, predicate2 ])
     }
 }
 
-struct Menu_Previews: PreviewProvider {
-    static var previews: some View {
-        Menu().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+extension View {
+    func themeColors(isSelected: Bool) -> some View {
+        return
+        self
+            .foregroundStyle(isSelected ? Color.highlightColor1 : Color.primaryColor1)
+            .background(isSelected ? Color.primaryColor1 : Color.highlightColor1)
     }
+}
+
+#Preview {
+    Menu().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
 }
