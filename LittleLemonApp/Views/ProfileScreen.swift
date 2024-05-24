@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct UserProfile: View {
+struct ProfileScreen: View {
     @StateObject private var viewModel = ViewModel()
     
     @Environment(\.presentationMode) var presentation
@@ -19,7 +19,6 @@ struct UserProfile: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            NavigationLink(destination: Onboarding(), isActive: $isLoggedOut) { }
             VStack(spacing: 5) {
                 VStack {
                     Text("Avatar")
@@ -42,13 +41,13 @@ struct UserProfile: View {
                 VStack{
                     Text("First name")
                         .onboardingTextStyle()
-                    TextField("First Name", text: $firstName)
+                    TextField("First name", text: $firstName)
                 }
                 
                 VStack {
                     Text("Last name")
                         .onboardingTextStyle()
-                    TextField("Last Name", text: $lastName)
+                    TextField("Last name", text: $lastName)
                     
                 }
                 
@@ -149,11 +148,14 @@ struct UserProfile: View {
         }
         .navigationTitle(Text("Personal information"))
         .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(isPresented: $isLoggedOut) {
+            Onboarding()
+        }
     }
 }
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile()
+        ProfileScreen()
     }
 }

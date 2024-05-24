@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MainScreen: View {
+struct MenuScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
@@ -13,8 +13,6 @@ struct MainScreen: View {
     }
 }
 
-struct MainScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        MainScreen().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-    }
+#Preview {
+    MenuScreen().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
 }

@@ -36,7 +36,7 @@ struct Menu: View {
                 .padding()
                 .background(Color.primaryColor1)
                 
-                Text("ORDER FOR DELIVERY!")
+                Text("Order for Delivery")
                     .font(.sectionTitle())
                     .foregroundColor(.highlightColor2)
                     .frame(maxWidth: .infinity, alignment: .leading)

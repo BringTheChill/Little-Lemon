@@ -7,11 +7,11 @@ struct Header: View {
         NavigationStack {
             VStack {
                 ZStack {
-                    Image("logo")
+                    Image("Logo")
                     HStack {
                         Spacer()
                         if isLoggedIn {
-                            NavigationLink(destination: UserProfile()) {
+                            NavigationLink(destination: ProfileScreen()) {
                                 Image("profile-image-placeholder")
                                     .resizable()
                                     .aspectRatio( contentMode: .fit)

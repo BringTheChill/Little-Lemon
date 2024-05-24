@@ -22,14 +22,13 @@ struct Onboarding: View {
                         .padding()
                         .background(Color.primaryColor1)
                         .frame(maxWidth: .infinity, maxHeight: 240)
-                    VStack {
-                        NavigationLink(destination: Home(), isActive: $isLoggedIn) { }
+                    VStack(spacing: 8) {
                         Text("First name *")
                             .onboardingTextStyle()
-                        TextField("First Name", text: $firstName)
+                        TextField("First name", text: $firstName)
                         Text("Last name *")
                             .onboardingTextStyle()
-                        TextField("Last Name", text: $lastName)
+                        TextField("Last name", text: $lastName)
                         Text("E-mail *")
                             .onboardingTextStyle()
                         TextField("E-mail", text: $email)
@@ -38,7 +37,10 @@ struct Onboarding: View {
                     .textFieldStyle(.roundedBorder)
                     .disableAutocorrection(true)
                     .padding()
-                    
+                    .navigationDestination(isPresented: $isLoggedIn) {
+                        Home()
+                    }
+
                     if viewModel.errorMessageShow {
                         withAnimation() {
                             Text(viewModel.errorMessage)

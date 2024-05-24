@@ -16,12 +16,12 @@
 		ECC2189529C64E8100F25EE2 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC2189429C64E8100F25EE2 /* Styles.swift */; };
 		ECC2189729C65B1100F25EE2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC2189629C65B1100F25EE2 /* Menu.swift */; };
 		ECC2189929C7959100F25EE2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC2189829C7959100F25EE2 /* Home.swift */; };
-		ECC2189D29C7A48900F25EE2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC2189C29C7A48900F25EE2 /* UserProfile.swift */; };
+		ECC2189D29C7A48900F25EE2 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC2189C29C7A48900F25EE2 /* ProfileScreen.swift */; };
 		ECC218A329C7B7B200F25EE2 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC218A229C7B7B200F25EE2 /* Hero.swift */; };
 		ECC218A529C7B84F00F25EE2 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC218A429C7B84F00F25EE2 /* Header.swift */; };
 		ECC218A729CA498900F25EE2 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC218A629CA498900F25EE2 /* FoodItem.swift */; };
 		ECC218A929CA52DB00F25EE2 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC218A829CA52DB00F25EE2 /* MenuItem.swift */; };
-		ECC218AB29CA53DE00F25EE2 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC218AA29CA53DE00F25EE2 /* MainScreen.swift */; };
+		ECC218AB29CA53DE00F25EE2 /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC218AA29CA53DE00F25EE2 /* MenuScreen.swift */; };
 		ECDA126629CB762500E4BDCB /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA126429CB762500E4BDCB /* FetchedObjects.swift */; };
 		ECDA126729CB762500E4BDCB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA126529CB762500E4BDCB /* Persistence.swift */; };
 		ECDA126929CB77D400E4BDCB /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA126829CB77D400E4BDCB /* MenuList.swift */; };
@@ -39,12 +39,12 @@
 		ECC2189429C64E8100F25EE2 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		ECC2189629C65B1100F25EE2 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		ECC2189829C7959100F25EE2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		ECC2189C29C7A48900F25EE2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		ECC2189C29C7A48900F25EE2 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		ECC218A229C7B7B200F25EE2 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		ECC218A429C7B84F00F25EE2 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		ECC218A629CA498900F25EE2 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		ECC218A829CA52DB00F25EE2 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
-		ECC218AA29CA53DE00F25EE2 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		ECC218AA29CA53DE00F25EE2 /* MenuScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreen.swift; sourceTree = "<group>"; };
 		ECDA126429CB762500E4BDCB /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
 		ECDA126529CB762500E4BDCB /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		ECDA126829CB77D400E4BDCB /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
@@ -134,11 +134,11 @@
 				ECC2189229C643A600F25EE2 /* Onboarding.swift */,
 				ECC2189629C65B1100F25EE2 /* Menu.swift */,
 				ECC2189829C7959100F25EE2 /* Home.swift */,
-				ECC2189C29C7A48900F25EE2 /* UserProfile.swift */,
+				ECC2189C29C7A48900F25EE2 /* ProfileScreen.swift */,
 				ECC218A229C7B7B200F25EE2 /* Hero.swift */,
 				ECC218A429C7B84F00F25EE2 /* Header.swift */,
 				ECC218A629CA498900F25EE2 /* FoodItem.swift */,
-				ECC218AA29CA53DE00F25EE2 /* MainScreen.swift */,
+				ECC218AA29CA53DE00F25EE2 /* MenuScreen.swift */,
 				ECB9DA3429CE4A94009F997C /* DetailItem.swift */,
 			);
 			path = Views;
@@ -219,11 +219,11 @@
 				ECC2189329C643A600F25EE2 /* Onboarding.swift in Sources */,
 				ECC218A329C7B7B200F25EE2 /* Hero.swift in Sources */,
 				ECB9DA3829CF91A8009F997C /* ViewModel.swift in Sources */,
-				ECC218AB29CA53DE00F25EE2 /* MainScreen.swift in Sources */,
+				ECC218AB29CA53DE00F25EE2 /* MenuScreen.swift in Sources */,
 				ECC218A529C7B84F00F25EE2 /* Header.swift in Sources */,
 				ECC218A729CA498900F25EE2 /* FoodItem.swift in Sources */,
 				ECDA126929CB77D400E4BDCB /* MenuList.swift in Sources */,
-				ECC2189D29C7A48900F25EE2 /* UserProfile.swift in Sources */,
+				ECC2189D29C7A48900F25EE2 /* ProfileScreen.swift in Sources */,
 				ECDA126729CB762500E4BDCB /* Persistence.swift in Sources */,
 				ECC2189929C7959100F25EE2 /* Home.swift in Sources */,
 				ECDA126629CB762500E4BDCB /* FetchedObjects.swift in Sources */,

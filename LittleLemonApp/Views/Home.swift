@@ -3,8 +3,13 @@ import SwiftUI
 struct Home: View {
     
     var body: some View {
-        MainScreen()
-            .navigationBarBackButtonHidden()
+        TabView {
+            MenuScreen()
+                .tabItem { Label("Menu", systemImage: "menucard") }
+            ProfileScreen()
+                .tabItem { Label("Profile", systemImage: "person") }
+        }
+        .navigationBarBackButtonHidden()
     }
 }
 
